@@ -26,8 +26,8 @@
     .json log file to the imported photos.
 
     MAPPING RULE (v1):
-    The .json frames metadata are mapped 1:1 applied to the imported photos, 
-    in as the order they have been imported (usually this is sorted by name).
+    The .json frames metadata are mapped 1:1 to the imported photos, 
+	in the order they were imported, (usually this is sorted by name).
     E.g. if the photos are named r001, r002, r003 etc., this script will apply 
     the .json metadata for frame 1 to r001, for frame 2 to r002 etc. If the
     number of imported images does not match the number of frames in the
@@ -42,29 +42,43 @@
 
     INSTALL:
       1. Copy this file into your darktable lua scripts folder:
-           --------------- HAVEN'T BEEN TESTED Linux:   ~/.config/darktable/lua/contrib/
-           Windows: %LOCALAPPDATA%\darktable\lua\contrib\
-           --------------- HAVEN'T BEEN TESTED macOS:   ~/Library/Application Support/darktable/lua/contrib/
+		 Windows: %LOCALAPPDATA%\darktable\lua\contrib\
+		 Linux (untested):  ~/.config/darktable/lua/contrib/
+		 macOS (untested):  ~/Library/Application Support/darktable/lua/contrib/
       2. Restart darktable, then go to preferences -> lua options and
          enable "import_Afilm_metadata".
       3. Restart darktable again. A new "import Afilm metadata" section should
          appear in the lighttable left panel.
 
-    USAGE:
-      1. Import your scanned roll, double-click the folder in the collections
-         panel to open it.
-      2. On the left panel, at "import Afilm metadata", click "Detect JSON from 
-         current folder". This will find the .json file in the same folder
-         as the photos.
-         - If you wish to select the path of the .json manually you can do so
-         by clicking on the path field; default shows (None)
-      3. Click "Apply metadata to collection".
-      4. Images are automatically removed and re-imported to force darktable
-         to pick up the new EXIF metadata.
+    BEFORE YOU START:
+      - Put the Afilm .json export in the same folder as the scans,
+        and make sure it is the only .json file there.
+      - Name your scans so they sort in shooting order
+        (e.g. r001, r002, r003 ...). Frame 1 goes to the first file,
+        frame 2 to the second, and so on.
+      - This script WRITES INTO YOUR IMAGE FILES (via ExifTool).
+        Keep a backup of your scans.
 
-    If this errors on load or on click, check Help -> Show Log for the
-    exact error message -- Lua API details can shift slightly between
-    darktable versions.
+    USAGE:
+      1. Import the roll into darktable, then double-click its folder
+         in the collections module so only that roll is shown.
+      2. In the lighttable's left panel, open "import Afilm metadata"
+         and click "Detect JSON from current folder".
+         (You can also pick the file yourself with the file button.)
+      3. Click "Apply metadata to collection".
+      4. Wait for the "Done" message. The images are removed from and
+         re-imported into darktable so it picks up the new metadata;
+         the files on disk stay where they are.
+
+    TIPS:
+      - Run this right after importing, BEFORE you start editing.
+        Edits stored only in darktable's library can be lost when the
+        images are re-imported (they are restored from .xmp sidecars
+        if sidecar writing is on, which is the default).
+      - If the number of images doesn't match the number of frames in
+        the .json, nothing is written and the message shows both counts.
+        Remove or add images until they match, then try again.
+      - Something went wrong? Check Help -> Show Log for the details.
     
 ]]
 
