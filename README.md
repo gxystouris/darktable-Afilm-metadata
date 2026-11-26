@@ -61,7 +61,12 @@ darktable itself never modifies image files; this script deliberately does. **Ke
 3. Restart darktable, go to **preferences → lua options** and enable **import_Afilm_metadata**.
 4. Restart darktable again. A new **import Afilm metadata** section appears in the lighttable's left panel.
 
----
+<p align="left">
+  <img src="use-demo/default-no-label.png" width="300" alt="Stock darktable">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="use-demo/with-afilm-add-on-no-label.png" width="300" alt="darktable with Afilm">
+</p>
+<p align="left"><sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left: default darktable view · Right: with Afilm add-on</sub></p>
 
 ## Usage
 
