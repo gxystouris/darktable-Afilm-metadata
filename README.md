@@ -78,6 +78,8 @@ darktable itself never modifies image files; this script deliberately does. **Ke
 3. Click **Apply metadata to collection**.
 4. Wait for the **Done** message. The images are removed from and re-imported into darktable so it picks up the new metadata. The files on disk stay where they are.
 
+<img width="400" alt="Afilm-darktable-addon" src="use-demo/Afilm-darktable-addon-demo.gif" />
+
 **Tips**
 
 - **Run this right after importing, before you start editing.** Edits stored only in darktable's library can be lost when the images are re-imported. They are restored from `.xmp` sidecars if sidecar writing is on, which is the default.
